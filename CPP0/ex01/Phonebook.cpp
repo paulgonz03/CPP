@@ -52,9 +52,9 @@ void Phonebook::addContact()
         return;
     }
 
+    count = count % 8;
     Contact contact(firstName, lastName, nickname, phoneNumber, darkestSecret);
     this->contacts[count] = contact;
-    count = count % 8;
     count++;
 
     std::cout << std::endl
