@@ -1,5 +1,5 @@
 NAME = zombie
-CC = c++
+CXX = c++
 CCFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp\
@@ -9,11 +9,11 @@ OBJS = ${SRC:%.cpp=objects/%.o}
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(CCFLAGS) $(OBJS) -o $(NAME)
 
 objects/%.o: %.cpp
 	@mkdir -p $(@D)
-	@$(CC) $(CCFLAGS) -c $< -o $@
+	@$(CXX) $(CCFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) -rf objects

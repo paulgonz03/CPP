@@ -31,8 +31,10 @@ void Harl::complain(std::string level)
 
     while (index < 4 && levels[index] != level)
         index++;
-    if (index == 4 && levels[index] != "ERROR")
-        return;
-    for (int i = 0; i <= index; i++)
+    for (int i = index; i < 4; i++)
+    {
+        std::cout << "[ " << levels[i] << " ]" << std::endl;
         (this->*harlFunc[i])();
+        std::cout << std::endl;
+    }
 }

@@ -7,4 +7,6 @@ int main()
     Zombie *zombie1 = newZombie("juan");
     Zombie *zombie2 = newZombie("jose");
 
+    (void)zombie1;
+    (void)zombie2;
 }
