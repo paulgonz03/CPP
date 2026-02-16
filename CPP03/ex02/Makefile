@@ -1,19 +1,19 @@
-NAME = fixed
-CXX = c++
+NAME = fragTrap
+CC = c++
 CCFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Fixed.cpp main.cpp\
+SRC = FragTrap.cpp ClapTrap.cpp ScavTrap.cpp main.cpp\
 
 OBJS = ${SRC:%.cpp=objects/%.o}
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CXX) $(CCFLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
 
 objects/%.o: %.cpp
 	@mkdir -p $(@D)
-	@$(CXX) $(CCFLAGS) -c $< -o $@
+	@$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) -rf objects
