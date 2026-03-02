@@ -11,7 +11,7 @@ class HumanA
 {
     private:
         std::string name;
-        Weapon &weapon; // simepre tiene asique es una referencia
+        Weapon &weapon;
     public:
         HumanA(std::string name, Weapon& weapon);
         ~HumanA();

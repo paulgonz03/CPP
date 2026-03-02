@@ -11,7 +11,7 @@ class HumanB
 {
     private:
         std::string name;
-        Weapon* weapon; //no siempre tiene, es un puntero
+        Weapon* weapon;
 
     public:
         HumanB();

@@ -1,15 +1,12 @@
 #include "Fixed.hpp"
 
-
-//contructores 
-
 Fixed::Fixed()
 {
     std::cout << "Default constructor called" << std::endl;   
     this->fixedPoint = 0; 
 }
 
-Fixed::Fixed(const Fixed& other) // cuando hago Fixed b(a);
+Fixed::Fixed(const Fixed& other)
 {
     std::cout << "Copy constructor called" << std::endl;   
     *this = other;
@@ -18,25 +15,21 @@ Fixed::Fixed(const Fixed& other) // cuando hago Fixed b(a);
 Fixed::Fixed(const int nbr)
 {
 	std::cout << "Int constructor called" << std::endl;
-    this->fixedPoint = nbr << numberBits;
+    this->fixedPoint = nbr << numberBits; //multiplica por 256
 }
 
 Fixed::Fixed(const float nbr)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->fixedPoint = (int)(roundf(nbr * (1 << numberBits)));
+	this->fixedPoint = (int)(roundf(nbr * (1 << numberBits))); // multiplica y redondea
 }
-
-//destructor
 
 Fixed::~Fixed() 
 {
     std::cout << "Destructor called" << std::endl;   
 }
 
-//operadores
-
-Fixed& Fixed::operator=(const Fixed& other) // cuando hago a = b
+Fixed& Fixed::operator=(const Fixed& other)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
@@ -49,11 +42,10 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 	os << fixed.toFloat();
 	return (os);
 }
- 
-//funciones auxiliares
 
 int Fixed::getRawBits(void) const
 {
+    std::cout << "getRawBits member function called" << std::endl;   
     return(this->fixedPoint);
 }
 

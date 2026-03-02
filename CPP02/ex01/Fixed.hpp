@@ -17,8 +17,8 @@ public:
     Fixed();
     Fixed(const int nbr);                            
     Fixed(const float nbr);                            
-    Fixed(const Fixed& other);          // constructor de copia
-    Fixed& operator=(const Fixed& other); // operador =
+    Fixed(const Fixed& other);
+    Fixed& operator=(const Fixed& other);
     ~Fixed();                        
 
     int getRawBits(void) const;

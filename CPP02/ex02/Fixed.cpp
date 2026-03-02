@@ -1,7 +1,5 @@
 #include "Fixed.hpp"
 
-// constrcutores
-
 Fixed::Fixed()
 {
     this->fixedPoint = 0;
@@ -17,25 +15,21 @@ Fixed::Fixed(const float nbr)
     this->fixedPoint = (int)(roundf(nbr * (1 << numberBits)));
 }
 
-Fixed::Fixed(const Fixed &other) // cuando hago Fixed b(a);
+Fixed::Fixed(const Fixed &other)
 {
     *this = other;
 }
 
-// destructor
+Fixed::~Fixed() {};
 
-Fixed::~Fixed(){};
 
-// operadores
-
-Fixed &Fixed::operator=(const Fixed &other) // cuando hago a = b
+Fixed &Fixed::operator=(const Fixed &other)
 {
     if (this != &other)
         this->fixedPoint = other.getRawBits();
     return (*this);
 }
 
-// comparison
 bool Fixed::operator>(const Fixed &other) const
 {
     return (this->toFloat() > other.toFloat());
@@ -66,8 +60,6 @@ bool Fixed::operator!=(const Fixed &other) const
     return (this->toFloat() != other.toFloat());
 }
 
-// arithmetic
-
 Fixed Fixed::operator+(const Fixed &other) const
 {
     return Fixed(this->toFloat() + other.toFloat());
@@ -93,8 +85,6 @@ Fixed Fixed::operator/(const Fixed &other) const
     return Fixed(this->toFloat() / other.toFloat());
 }
 
-// increment
-
 Fixed &Fixed::operator++(void)
 {
     this->fixedPoint++;
@@ -109,8 +99,6 @@ Fixed Fixed::operator++(int)
     return (temp);
 }
 
-// decrement
-
 Fixed &Fixed::operator--(void)
 {
     this->fixedPoint--;
@@ -124,8 +112,6 @@ Fixed Fixed::operator--(int)
     this->fixedPoint--;
     return (temp);
 }
-
-// funciones auxiliares
 
 int Fixed::getRawBits(void) const
 {
@@ -147,7 +133,6 @@ int Fixed::toInt(void) const
     return (fixedPoint >> numberBits);
 }
 
-// static functions
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
     if (a < b)
@@ -176,7 +161,6 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
     return(b);
 }
 
-// output operator
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
     os << fixed.toFloat();

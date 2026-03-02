@@ -23,13 +23,13 @@ void Fixed::setRawBits(int const raw)
     this->fixedPoint = raw;
 }
 
-Fixed::Fixed(const Fixed& other) // cuando hago Fixed b(a);
+Fixed::Fixed(const Fixed& other)
 {
     std::cout << "Copy constructor called" << std::endl;   
     this->fixedPoint = other.getRawBits();
 }
 
-Fixed& Fixed::operator=(const Fixed& other) // cuando hago a = b
+Fixed& Fixed::operator=(const Fixed& other)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)

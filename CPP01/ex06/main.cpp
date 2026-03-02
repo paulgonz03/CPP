@@ -3,7 +3,10 @@
 int main(int argc, char **argv)
 {
 	if (argc != 2)
-		return (0);
+	{
+		std::cout << "Usage: ./harl [DEBUG|INFO|WARNING|ERROR]" << std::endl;
+		return 1;
+	}
 
 	Harl harl;
 

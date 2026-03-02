@@ -8,10 +8,10 @@ int main(int argc, char **argv)
         return (1);
 
     std::ifstream aInput;
-    aInput.open(argv[1], std::ifstream::in); // abrir archivo de entrada, input
+    aInput.open(argv[1], std::ifstream::in);
     if (!aInput)
         return(std::cout << "error" << std::endl, 1);
-    std::ofstream oInput(std::string(argv[1] + std::string(".replace")).c_str()); // arhivo de salida;
+    std::ofstream oInput(std::string(argv[1] + std::string(".replace")).c_str());
     std::string s1 = argv[2];
     std::string s2 = argv[3];
     std::string buffer;
