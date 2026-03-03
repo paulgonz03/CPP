@@ -4,7 +4,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "\033[0;32mDefault ClapTrap constructor called\033[0m" << std::endl;
+    std::cout << "\033[0;32mClapTrap default constructor called\033[0m" << std::endl;
     this->name = "unknown";
     this->hitPoints = 10;
     this->energyPoints = 10;
