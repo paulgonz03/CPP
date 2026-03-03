@@ -1,8 +1,10 @@
 #include "ScavTrap.hpp"
 
+// constrcutors
+
 ScavTrap::ScavTrap() : ClapTrap()
 {
-    std::cout << "ScavTrap default constructor called" << std::endl;
+    std::cout << "Default ScavTrap constructor called" << std::endl;
     this->hitPoints = 100;
     this->energyPoints = 50;
     this->attackDamage = 20;
@@ -22,6 +24,15 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
     std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
+// destructors
+
+ScavTrap::~ScavTrap()
+{
+    std::cout << "ScavTrap destructor called" << std::endl;
+}
+
+// operators 
+
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
     if (this != &other)
@@ -34,6 +45,8 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
     std::cout << "ScavTrap assignment operator called" << std::endl;
     return *this;
 }
+
+// member functions
 
 void ScavTrap::attack(const std::string &target)
 {
@@ -58,9 +71,4 @@ void ScavTrap::attack(const std::string &target)
 void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap " << this->name << " enter in gate keeper mode" << std::endl;
-}
-
-ScavTrap::~ScavTrap()
-{
-    std::cout << "ScavTrap destructor called" << std::endl;
 }

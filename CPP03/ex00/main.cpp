@@ -5,6 +5,7 @@ int main()
     ClapTrap ClapTrap("paula");
 
     ClapTrap.attack("adrian");
+    ClapTrap.attack("adrian");
     ClapTrap.takeDamage(3);
     ClapTrap.beRepaired(11);
 

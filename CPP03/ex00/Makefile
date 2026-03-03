@@ -1,6 +1,6 @@
 NAME = clapTrap
 CXX = c++
-CCFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = ClapTrap.cpp main.cpp\
 
@@ -9,11 +9,13 @@ OBJS = ${SRC:%.cpp=objects/%.o}
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CXX) $(CCFLAGS) $(OBJS) -o $(NAME)
+	@echo "Compiling..."
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	@echo "Build complete!"
 
 objects/%.o: %.cpp
 	@mkdir -p $(@D)
-	@$(CXX) $(CCFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) -rf objects
