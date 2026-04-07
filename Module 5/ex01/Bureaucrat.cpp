@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
@@ -6,7 +7,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
         throw(Bureaucrat::GradeTooHighException());
     if (grade > 150)
         throw(Bureaucrat::GradeTooLowException());
-    std::cout << "Bureaucrat constructor" << std::endl;
+    std::cout << "Bureaucrat constructor named" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
@@ -18,9 +19,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other)
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
     if (this != &other)
-    {
         this->_grade = other._grade;
-    }
     return (*this);
 }
 
@@ -51,6 +50,23 @@ void Bureaucrat::decrementGrade()
     if (this->_grade + 1 > 150)
         throw(Bureaucrat::GradeTooLowException());
     this->_grade++;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << this->_name << " signed " << form.getName() << std::endl;
+    }
+    catch (Form::GradeTooLowException &e) // e es una variable que contiene la excepcion que fue lanzada
+    {
+        std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+    catch (Form::GradeTooHighException &e)
+    {
+        std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
 }
 
 Bureaucrat::~Bureaucrat()

@@ -14,13 +14,21 @@ class Form
         const int _sign;
         const int _execute;
 
-    
     public:
-        Form(/* args */);
-        beSigned(Bureaucrat bureaucrat);
+        Form(std::string name, int signGrade, int executeGrade);
+        Form(const Form &other);
+        
+        void beSigned(Bureaucrat bureaucrat);
+        bool isSigned() const;
+        std::string getName() const;
+        int getSign() const;
+        int getExecute() const;
+
+        Form &operator=(const Form &other);
+
         ~Form();
 
-        class GradeTooHighException : public std::exception // hereda para poder utilizar el catch 
+        class GradeTooHighException : public std::exception // hereda para poder utilizar el catch
         {
         public:
             virtual const char *what() const throw();
@@ -32,10 +40,6 @@ class Form
         };
 };
 
-std::ostream& operator<<(std::ostream& os, const Form& form);
-
-
-
-
+std::ostream &operator<<(std::ostream &os, const Form &form);
 
 #endif

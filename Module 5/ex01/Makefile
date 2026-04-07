@@ -2,7 +2,7 @@ NAME = bureaucrat
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =  Bureaucrat.cpp main.cpp\
+SRC =  Bureaucrat.cpp Form.cpp main.cpp\
 
 OBJS = ${SRC:%.cpp=objects/%.o}
 
