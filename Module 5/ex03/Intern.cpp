@@ -49,7 +49,7 @@ AForm *Intern::makeForm(std::string formName, std::string target)
             return (this->*funcs[i])(target);
         }
     }
-    std::cout << "Error: Intern cannot  el ex0create '" << formName << "' because it does not exist." << std::endl;
+    std::cout << "Error: Intern cannot create '" << formName << "' because it does not exist." << std::endl;
     return NULL;
 }
 

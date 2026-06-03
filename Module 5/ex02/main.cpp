@@ -6,7 +6,7 @@
 
 int main()
 {
- srand(time(NULL));
+    srand(time(NULL));
 
     std::cout << "\n--- CREANDO BURÓCRATAS ---" << std::endl;
     Bureaucrat boss("Jefe", 1);       // Nivel máximo

@@ -18,7 +18,7 @@ int main()
 
     std::cout << MAGENTA << "\n--- CREANDO OBJETOS ---" << RESET << std::endl;
     Intern someRandomIntern;
-    Bureaucrat boss("Boss", 1); // Grado 1 (jefe máximo, puede hacer todo)
+    Bureaucrat boss("Boss", 1);
     AForm* form;
 
     std::cout << CYAN << "\n--- TEST 1: ROBOTOMY REQUEST FORM ---" << RESET << std::endl;
@@ -27,7 +27,7 @@ int main()
     {
         boss.signForm(*form);
         boss.executeForm(*form);
-        delete form; // MUY IMPORTANTE: Liberar la memoria
+        delete form; 
     }
 
     std::cout << CYAN << "\n--- TEST 2: SHRUBBERY CREATION FORM ---" << RESET << std::endl;
@@ -50,7 +50,7 @@ int main()
 
     std::cout << RED << "\n--- TEST 4: FORMULARIO INVENTADO (ERROR ESPERADO) ---" << RESET << std::endl;
     form = someRandomIntern.makeForm("formulario cafetera", "Oficina");
-    if (form) // Esto no debería ejecutarse porque form será NULL
+    if (form) 
     {
         boss.signForm(*form);
         boss.executeForm(*form);

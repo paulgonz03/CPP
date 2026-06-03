@@ -5,7 +5,7 @@
 #include <string>
 #include <exception>
 
-class Form; // Forward declaration
+class Form; 
 
 class Bureaucrat
 {
@@ -24,8 +24,8 @@ public:
     void incrementGrade();
     void decrementGrade();
     void signForm(Form &form);
-    // dentro de la clase porque son excepciones especificas. 
-    class GradeTooHighException : public std::exception // hereda para poder utilizar el catch 
+
+    class GradeTooHighException : public std::exception 
     {
     public:
         virtual const char *what() const throw();
