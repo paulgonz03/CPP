@@ -52,6 +52,14 @@ T &Array<T>::operator[](unsigned int nbr)
 }
 
 template <typename T>
+T const &Array<T>::operator[](unsigned int nbr) const
+{
+    if (nbr >= this->_size)
+        throw(std::exception());
+    return(this->array[nbr]);
+}
+
+template <typename T>
 unsigned int Array<T>::size() const
 {
     return(this->_size);

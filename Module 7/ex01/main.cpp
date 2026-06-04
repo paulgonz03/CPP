@@ -2,22 +2,25 @@
 #include "iter.hpp"
 
 template <typename T>
-void printElement(T &element) {
+void printElement(T &element)
+{
     std::cout << element << std::endl;
 }
 
 template <typename T>
-void plusInt(T &element) {
+void plusInt(T &element)
+{
     element += 5;
 }
 
-
-int main(void) {
+int main(void)
+{
     int intArray[] = {1, 2, 3, 4, 5};
+    int intTest[] = {0, 1, 2, 3, 4, 42, 42, 42, 42, 42};
     char charArray[] = {'a', 'b', 'c', 'd', 'e'};
     std::string stringArray[] = {"hello", "world", "forty", "two"};
 
-    std::cout << "\nTesting:" << std::endl;
+    std::cout << "Testing:" << std::endl;
     ::iter(intArray, 5, plusInt<int>);
 
     std::cout << "Testing with int array:" << std::endl;
@@ -29,6 +32,8 @@ int main(void) {
     std::cout << "\nTesting with string array:" << std::endl;
     ::iter(stringArray, 4, printElement<const std::string>);
 
+    std::cout << "Testing with int array:" << std::endl;
+    ::iter(intTest, 10, printElement<const int>);
 
     return 0;
 }
