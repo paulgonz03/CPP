@@ -67,14 +67,6 @@ static void doubleConvert(double input)
     printConvertion(c, n, f, input);
 }
 
-// static void imposibleConvertion()
-// {
-//     std::cout << "char: impossible" << std::endl;
-//     std::cout << "int: impossible" << std::endl;
-//     std::cout << "float: impossible" << std::endl;
-//     std::cout << "double: impossible" << std::endl;
-// }
-
 static bool pseudoConvertion(std::string input)
 {
     int index = 6;
@@ -161,7 +153,7 @@ void ScalarConverter::convert(std::string input)
     char *endPtr = NULL;
     if (input.find('f') != std::string::npos) // float
     {
-        double val = std::strtod(input.c_str(), &endPtr);
+        double val = std::strtod(input.c_str(), &endPtr); 
         if (*endPtr == 'f' && *(endPtr + 1) == '\0') 
             floatConvert(static_cast<float>(val));
         else
@@ -188,9 +180,7 @@ void ScalarConverter::convert(std::string input)
                 std::cout << "double: impossible" << std::endl;
             }
             else
-            {
                 intConvert(static_cast<int>(val));
-            }
         }
         else
             std::cout << "Wrong input" << std::endl;

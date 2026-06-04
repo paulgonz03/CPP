@@ -5,7 +5,7 @@
 #include <string>
 #include <exception>
 
-class Bureaucrat
+    class Bureaucrat
 {
 private:
     const std::string _name;

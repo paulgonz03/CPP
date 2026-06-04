@@ -1,8 +1,8 @@
-NAME = span
+NAME = RPN
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Span.cpp
+SRC = main.cpp RPN.cpp
 
 OBJS = ${SRC:%.cpp=objects/%.o}
 

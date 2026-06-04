@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include <errno.h>
 
 int main()
 {

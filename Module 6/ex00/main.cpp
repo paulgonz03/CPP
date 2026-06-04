@@ -5,13 +5,9 @@
 int main(int argc, char **argv)
 {
     if (argc == 2)
-    {
-        // Prueba individual introducida por consola
         ScalarConverter::convert(argv[1]);
-    }
     else if (argc == 1)
     {
-        // Batería de pruebas automática si no se pasan argumentos
         std::cout << "Corriendo bateria de pruebas automatica...\n" << std::endl;
 
         std::string test_cases[] = {

@@ -17,12 +17,6 @@ class BitcoinExchange
     public:
         BitcoinExchange();
         ~BitcoinExchange();
-
-        /**
-         * @brief Function to extarct the database information
-         * 
-         * @param file Database filename
-         */
         void extract(std::string filename);
         void consultDataBase(std::string fileName);
 };
