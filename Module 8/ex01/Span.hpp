@@ -10,16 +10,18 @@
 
 class Span
 {
-private:
-    unsigned int _max;
-    std::vector<int>  _numbers;
-public:
-    Span(unsigned int max);
-    void addNumber(int i);
-    void addNumber(std::vector<int>::iterator start, std::vector<int>::iterator final);
-    int shortestSpan();
-    int longestSpan();
-    ~Span();
+    private:
+        unsigned int _max;
+        std::vector<int>  _numbers;
+    public:
+        Span(unsigned int max);
+        Span(const Span &other);
+        Span &operator=(const Span &other);
+        void addNumber(int i);
+        void addNumber(std::vector<int>::iterator start, std::vector<int>::iterator final);
+        int shortestSpan();
+        int longestSpan();
+        ~Span();
 };
 
 

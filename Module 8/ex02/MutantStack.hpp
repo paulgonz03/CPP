@@ -7,19 +7,19 @@
 #include <stack>
 #include <list>
 
-template <typename T> 
+template <typename T>
 class MutantStack : public std::stack<T>
-{ 
+{
     public:
         typedef typename std::stack<T>::container_type::iterator iterator;
-        MutantStack (/* args */);
-        ~MutantStack ();
+        MutantStack();
+        MutantStack(const MutantStack &other);
+        MutantStack &operator=(const MutantStack &other);
+        ~MutantStack();
         iterator begin();
         iterator end();
-
 };
 
 #include "MutantStack.tpp"
-
 
 #endif

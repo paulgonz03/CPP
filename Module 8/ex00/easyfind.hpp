@@ -16,4 +16,3 @@ typename T::iterator easyfind(T &a, int nbr)
 
 
 #endif
-
