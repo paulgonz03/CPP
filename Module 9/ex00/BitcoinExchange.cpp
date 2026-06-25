@@ -27,7 +27,7 @@ void BitcoinExchange::_parseDataBase(std::string buffer)
 void BitcoinExchange::extract(std::string fileName)
 {
     std::ifstream aInput;
-    aInput.open(fileName, std::ifstream::in);
+    aInput.open(fileName.c_str(), std::ifstream::in);
     if (!aInput)
         throw std::invalid_argument("Invalid path");
     std::string buffer;
@@ -47,7 +47,7 @@ void BitcoinExchange::_parseInput(std::string buffer)
     float coins = std::atof(coinsStr.c_str());
     if (coins < 0)
         throw std::invalid_argument("not a positive number");
-    if (coins >= static_cast<float>(std::numeric_limits<int>::max()))
+    if (coins > 1000)
         throw std::invalid_argument("too large a number");
     std::map<Date, float>::iterator mapSearch = _dataBase.find(date);
     if (mapSearch != _dataBase.end()) // que ha encontrado un valor
@@ -81,7 +81,7 @@ void BitcoinExchange::_parseInput(std::string buffer)
 void BitcoinExchange::consultDataBase(std::string fileName)
 {
     std::ifstream aInput;
-    aInput.open(fileName, std::ifstream::in);
+    aInput.open(fileName.c_str(), std::ifstream::in);
     if (!aInput)
         throw std::invalid_argument("Invalid path");
     std::string buffer;

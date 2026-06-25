@@ -6,6 +6,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <limits>
+#include <cstdlib>
 #include "Date.hpp"
 
 class BitcoinExchange
